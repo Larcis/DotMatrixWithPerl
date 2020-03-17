@@ -35,17 +35,16 @@ sub show_dot_matrix {
     my $img = GD::Simple->new(($_[0] + 1) * $coeff, ($_[1] + 1) * $coeff); 
     $img->bgcolor('white');
     $img->fgcolor('black');
-    $img->font(GD::gdGiantFont);
-    print $img->font();
-    $img->fontsize(100);
+    $img->font("c:\\windows\\fonts\\Coprgtb.ttf");
+    $img->fontsize($coeff/1.5);
 
     my ($i, $j);
     for($i = 1; $i < $_[0] + 1; $i++){
-        $img->moveTo($coeff/2, $i * $coeff + $coeff);
+        $img->moveTo($coeff/3, $i * $coeff + $coeff);
         $img->string($_[2][0][$i]);
     }
     for($i = 1; $i < $_[1] + 1; $i++){
-        $img->moveTo($i * $coeff+ $coeff / 2, $coeff);
+        $img->moveTo($i * $coeff+ $coeff / 3, $coeff);
         $img->string($_[2][$i][0]);
     }
     $img->bgcolor('black');
